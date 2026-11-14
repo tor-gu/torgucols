@@ -1,0 +1,10 @@
+# Built by build.py / pads.py, or local to a run
+pkg/
+dist/
+wheels/
+expected.json
+state.json
+results.jsonl
+report.md
+.venv/
+__pycache__/

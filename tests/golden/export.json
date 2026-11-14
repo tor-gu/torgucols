@@ -1,0 +1,179 @@
+{
+ "officer": {
+  "columns": [
+   {
+    "name": "year",
+    "type": "integer",
+    "values": [
+     "2021",
+     "2021",
+     "2021",
+     "2022",
+     "2022",
+     "2022",
+     "2022"
+    ]
+   },
+   {
+    "name": "agency_id",
+    "type": "character",
+    "values": [
+     "NJLEA0002",
+     "NJLEA0001",
+     "NJLEA0001",
+     "NJLEA0001",
+     "NJLEA0001",
+     "NJLEA0002",
+     "NJLEA0002"
+    ]
+   },
+   {
+    "name": "officer_race",
+    "type": "factor",
+    "values": [
+     "White",
+     "Asian",
+     "",
+     "White",
+     "White",
+     "Asian",
+     "White"
+    ],
+    "levels": [
+     "White",
+     "Asian",
+     "Other"
+    ]
+   },
+   {
+    "name": "officer_gender",
+    "type": "factor",
+    "values": [
+     "Male",
+     "Female",
+     "Male",
+     "Male",
+     "Male",
+     "",
+     "Female"
+    ],
+    "levels": [
+     "Male",
+     "Female",
+     "X or Non-Binary"
+    ]
+   },
+   {
+    "name": "promoted",
+    "type": "logical",
+    "values": [
+     "",
+     "",
+     "",
+     "TRUE",
+     "FALSE",
+     "FALSE",
+     "TRUE"
+    ]
+   },
+   {
+    "name": "officer_count",
+    "type": "integer",
+    "values": [
+     "3",
+     "1",
+     "2",
+     "4",
+     "5",
+     "6",
+     "7"
+    ]
+   }
+  ]
+ },
+ "applicant": {
+  "columns": [
+   {
+    "name": "year",
+    "type": "integer",
+    "values": [
+     "2022",
+     "2022",
+     "2023"
+    ]
+   },
+   {
+    "name": "agency_id",
+    "type": "character",
+    "values": [
+     "NJLEA0001",
+     "NJLEA0001",
+     "NJLEA0002"
+    ]
+   },
+   {
+    "name": "outcome",
+    "type": "factor",
+    "values": [
+     "Pending",
+     "",
+     "Not Appointed"
+    ],
+    "levels": [
+     "Appointed to Agency",
+     "Not Appointed",
+     "Pending"
+    ]
+   },
+   {
+    "name": "applicant_count",
+    "type": "integer",
+    "values": [
+     "2",
+     "1",
+     "3"
+    ]
+   }
+  ]
+ },
+ "agency_practice": {
+  "columns": [
+   {
+    "name": "year",
+    "type": "integer",
+    "values": [
+     "2022",
+     "2022",
+     "2023"
+    ]
+   },
+   {
+    "name": "agency_id",
+    "type": "character",
+    "values": [
+     "NJLEA0001",
+     "NJLEA0002",
+     "NJLEA0001"
+    ]
+   },
+   {
+    "name": "hiring_civil_service",
+    "type": "logical",
+    "values": [
+     "TRUE",
+     "FALSE",
+     "TRUE"
+    ]
+   },
+   {
+    "name": "hire_method_waiver",
+    "type": "logical",
+    "values": [
+     "FALSE",
+     "",
+     "TRUE"
+    ]
+   }
+  ]
+ }
+}

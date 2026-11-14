@@ -1,0 +1,6 @@
+# Local development: test dependencies plus the tools used by `make style` and `make build`
+-r tests/requirements.txt
+black
+isort
+flake8
+build
