@@ -166,9 +166,15 @@ make build
 
 ## Releases
 
-A release is a git tag `vX.Y.Z`, with the same version in `setup.cfg`. Consumers pin it in
-their function's `requirements.txt` (which `sam build` bundles) and in their build and test
-requirements:
+A release is a git tag `vX.Y.Z`, with the same version in `setup.cfg`, and a GitHub release
+with the wheel attached. Consumers pin the wheel in their function's `requirements.txt`, which
+`sam build` bundles (it can't take a git source without a `setup.py`):
+
+```
+torgucols @ https://github.com/tor-gu/torgucols/releases/download/v0.1.0/torgucols-0.1.0-py3-none-any.whl
+```
+
+and the tag in their build and test requirements:
 
 ```
 torgucols @ git+https://github.com/tor-gu/torgucols@v0.1.0
