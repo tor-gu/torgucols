@@ -41,7 +41,7 @@ On a lambda cold start, there is a fixed cost of about 280ms. We want to get a r
 [rugo](https://pypi.org/project/rugo/) is the closest existing option: a Parquet reader built
 for serverless cold starts. It has no runtime dependencies (its native engine comes in the
 wheel), reads only the columns asked for, and skips row groups that a filter rules out. It
-was benchmarked on Lambda against torgucols with [njoaguof-api](https://github.com/tor-gu/njoaguof-api)'s counts data and three of its
+was benchmarked on Lambda against torgucols with [njoaguof-api](https://github.com/torgu-data/njoaguof-api)'s counts data and three of its
 count queries. Both packages held the same data in the same order. The setup favoured rugo:
 incidents were sorted by date so it could prune on the date-filtered query, and its Parquet
 was uncompressed, the smallest once zipped. Details, code and raw results are in
@@ -72,7 +72,7 @@ keeps its columns in memory, while rugo reads them again on each request.
   MB). Their imports took 71–89 ms and 235 ms locally, before reading any data. They're
   likely slower on Lambda, as rugo's import was.
 - **duckdb** wasn't measured. It's a large native package too.
-- **SQLite** comes with Python and opens in a few ms. [njoaguof-api](https://github.com/tor-gu/njoaguof-api) uses it for its row
+- **SQLite** comes with Python and opens in a few ms. [njoaguof-api](https://github.com/torgu-data/njoaguof-api) uses it for its row
   endpoints, but for grouped counts it measured about 13 times slower than int32 columns on
   Lambda.
 - **A key-value store** doesn't fit the queries (see Design goals).
@@ -171,13 +171,13 @@ with the wheel attached. Consumers pin the wheel in their function's `requiremen
 `sam build` bundles (it can't take a git source without a `setup.py`):
 
 ```
-torgucols @ https://github.com/tor-gu/torgucols/releases/download/v0.1.0/torgucols-0.1.0-py3-none-any.whl
+torgucols @ https://github.com/torgu-data/torgucols/releases/download/v0.1.0/torgucols-0.1.0-py3-none-any.whl
 ```
 
 and the tag in their build and test requirements:
 
 ```
-torgucols @ git+https://github.com/tor-gu/torgucols@v0.1.0
+torgucols @ git+https://github.com/torgu-data/torgucols@v0.1.0
 ```
 
 A change to the format bumps `FORMAT`, and the reader rejects stores of any other version.
